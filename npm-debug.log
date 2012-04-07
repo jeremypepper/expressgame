@@ -1,0 +1,56 @@
+info it worked if it ends with ok
+verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+verbose cli   'install',
+verbose cli   'express-sessioncookie' ]
+info using npm@1.1.12
+info using node@v0.6.14
+verbose C:\Program Files (x86)\nodejs\\node.exe node symlink
+verbose config file C:\Users\jerhay\.npmrc
+verbose config file C:\Program Files (x86)\nodejs\etc\npmrc
+verbose config file C:\Program Files (x86)\nodejs\node_modules\npm\npmrc
+verbose mkdir done: C:\Users\jerhay\AppData\Roaming\npm 755
+verbose mkdir done: C:\Users\jerhay\expressgame 755
+verbose caching C:\Users\jerhay\expressgame\package.json
+verbose loadDefaults application-name@0.0.1
+verbose caching C:\Users\jerhay\expressgame\node_modules\connect-auth\package.json
+verbose caching C:\Users\jerhay\expressgame\node_modules\ejs\package.json
+verbose caching C:\Users\jerhay\expressgame\node_modules\express\package.json
+verbose caching C:\Users\jerhay\expressgame\node_modules\jade\package.json
+verbose from cache C:\Users\jerhay\expressgame\package.json
+verbose readDependencies: using package.json deps
+verbose cache add [ 'express-sessioncookie', null ]
+silly cache add: name, spec, args [ undefined,
+silly cache add: name, spec, args   'express-sessioncookie',
+silly cache add: name, spec, args   [ 'express-sessioncookie', null ] ]
+verbose parsed url { pathname: 'express-sessioncookie',
+verbose parsed url   path: 'express-sessioncookie',
+verbose parsed url   href: 'express-sessioncookie' }
+verbose addNamed [ 'express-sessioncookie', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'express-sessioncookie', '', false ]
+verbose raw, before any munging express-sessioncookie
+verbose url resolving [ 'https://registry.npmjs.org/', './express-sessioncookie' ]
+verbose url resolved https://registry.npmjs.org/express-sessioncookie
+http GET https://registry.npmjs.org/express-sessioncookie
+http 404 https://registry.npmjs.org/express-sessioncookie
+silly get cb [ 404,
+silly get cb   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+silly get cb     date: 'Sat, 07 Apr 2012 17:20:46 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '52',
+silly get cb     'cache-control': 'must-revalidate' } ]
+ERR! 404 'express-sessioncookie' is not in the npm registry.
+ERR! 404 You should bug the author to publish it
+ERR! 404 Note that you can also install from a
+ERR! 404 tarball, folder, or http url, or git url.
+ERR! 
+ERR! System Windows_NT 6.1.7601
+ERR! command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "express-sessioncookie"
+ERR! cwd C:\Users\jerhay\expressgame
+ERR! node -v v0.6.14
+ERR! npm -v 1.1.12
+ERR! code E404
+ERR! message 404 Not Found: express-sessioncookie
+ERR! errno {}
+verbose exit [ 1, true ]
