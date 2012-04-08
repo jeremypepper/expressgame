@@ -16,15 +16,15 @@ exports.index = function(req, res){
   console.log(req.cookies)
   var gotUserCallback = function (user) {
   	  var geddy = global.geddy;
-      geddy.log.debug( "In got user callback. user is " + user );
+      LogDebug( "In got user callback. user is " + user );
          result.user = user;
          if( user ){
-            geddy.db.LoadGamesByUserId( user.id,
+            Database.LoadGamesByUserId( user.id,
                function( games )
                {
                   if( games === null )
                   {
-                     geddy.log.error( "Failed to get games from: " + user.id );
+                     LogError( "Failed to get games from: " + user.id );
                      games = [];
                   }
 
@@ -123,13 +123,13 @@ exports.returnFromFacebook = function (req, resp, params) {
             resp.cookie("fbid", data.id, { path: "/" });
             resp.redirect('/');
          } else {
-            geddy.log.error("error in returnFromFacebook, data:" + data);
+            LogError("error in returnFromFacebook, data:" + data);
             resp.render('return',data);
          }
       }
       var errorhandler = function () {
          var errormsg = "oh snap, got an error in returnFromFacebook";
-         geddy.log.error(errormsg);
+         LogError(errormsg);
          done({ error: "oh snap, got an error in returnFromFacebook" });
       }
 
@@ -159,8 +159,8 @@ exports.returnFromFacebook = function (req, resp, params) {
       }
       else {
          var errormsg = "error: state is invalid or can't get code from callback";
-         geddy.log.error(errormsg);
-         geddy.log.error(query);
+         LogError(errormsg);
+         LogError(query);
          done({ error: errormsg });
       }
    };

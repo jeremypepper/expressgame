@@ -7,12 +7,12 @@ var Game = new ( function()
    this.save = function( game )
    {
       game.saved = true;
-      geddy.db.SaveGame( game );
+      Database.SaveGame( game );
    }
 
    this.update = function( id, drawData, callback )
    {
-      geddy.db.LoadGameByGameId( id, function( game )
+      Database.LoadGameByGameId( id, function( game )
       {
          if( game )
          {
@@ -26,15 +26,15 @@ var Game = new ( function()
 
    this.loadByGameId = function( gameid, callback )
    {
-      geddy.db.LoadGameByGameId( gameid, callback );
+      Database.LoadGameByGameId( gameid, callback );
    }
 
    this.loadByUserId = function( userid, callback )
    {
-      geddy.db.LoadGamesByUserId( userid, callback );
+      Database.LoadGamesByUserId( userid, callback );
    }
 
-   geddy.log.debug( "creating the game model adapter" );
+   LogDebug( "creating the game model adapter" );
 } )();
 
 Game.getOtherUserId = function(game, myUserId){

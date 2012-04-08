@@ -75,6 +75,13 @@ app.resource('games', require('./routes/game'),
     update:gamecontroller.update
    });
 
+// Todo ryknuth: make these write different colors
+LogError = console.log;
+LogInfo = console.log;
+LogWarning = console.log;
+LogDebug = console.log;
+Database = require(process.cwd() + '/util/mongodb').MongoDb;
+
 // Routes
 // app.get('/', routes.index);
 // app.get('/connectToFacebook', routes.connectToFacebook);
