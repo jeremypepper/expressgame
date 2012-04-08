@@ -1,6 +1,6 @@
 // controllerUtil
 // common controler methods
-
+geddy = global.geddy;
 var ControllerUtil = new (function(){
 	this.verifyGetUser = function(req, resp, done)
 	{
@@ -9,9 +9,9 @@ var ControllerUtil = new (function(){
 		var user;
 		if(fbtoken)
 		{
-		  //geddy.model.User.load(fbid,fbtoken,function(user){
+		  geddy.model.User.load(fbid,fbtoken,function(user){
 		    done(user);
-		  //});
+		  });
 		}
 		else
 		{

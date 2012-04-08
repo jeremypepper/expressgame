@@ -5,36 +5,40 @@ var ajax = require(process.cwd() + '/util/ajax').Ajax;
 var facebook = require(process.cwd() + '/util/facebook').Facebook;
 var string = require(process.cwd() + '/util/string').String;
 var controllerUtil = require(process.cwd() + '/util/controllerUtil').ControllerUtil;
-var geddy = global.geddy;
+geddy = global.geddy;
+
+
+console.log("hey you are loading index router.")
 /*
  * GET home page.
  */
-
 exports.index = function(req, res){
   var self = this;
   var result = {};
   console.log("req.cookies")
   console.log(req.cookies)
   var gotUserCallback = function (user) {
-     // result.user = user;
-     // if (user) {
-     //    geddy.db.LoadGamesByUserId(user.id,
-     //       function (games) {
-     //          if (games === null)
-     //             geddy.log.error("Failed to get games from: " + user.id);
-     //          else {
-     //             geddy.games = games;
-     //             result.games = geddy.games;
-     //          }
+  	  var geddy = global.geddy;
+      geddy.log.debug( "In got user callback. user is " + user );
+         result.user = user;
+         if( user ){
+            geddy.db.LoadGamesByUserId( user.id,
+               function( games )
+               {
+                  if( games === null )
+                  {
+                     geddy.log.error( "Failed to get games from: " + user.id );
+                     games = [];
+                  }
 
-     //          done();
-     //       });
-     // }
-     // else {
-     //    result.games = {};
-     //    done();
-     // }
-     done();
+                  result.games = games;
+                  done();
+               } );
+         }
+         else{
+            result.games = [];
+            done();
+         }
   };
 
   function done() {
@@ -67,7 +71,44 @@ exports.connectToFacebook = function (req, resp, params) {
 };
 
 function loginOrRegisterUser(token, expires, cb) {
-	cb({id:"FAKEID",name:"fakename"});
+	 // todo check for errors
+      facebook.getMe( 
+			token,
+			function( data )
+			{
+			   if( data.error )
+			   {
+			      cb( data );
+			   }
+			   else
+			   {
+			      var me = data;
+			      geddy.model.User.load( me.id, token, function( user )
+			      {
+			         if( !user )
+			         {
+			            // dont have this user yet, need to create a new one
+			            // todo: replace expires with now + expires
+			            user = geddy.model.User.create( {
+			               id: me.id,
+			               name: me.name,
+			               token: token,
+			               expires: new Date()
+			            } );
+			            geddy.model.User.create( me.id, function( user ) { } );
+			         }
+			         else
+			         {
+			            user.token = token;
+			            user.expires = new Date();
+			         }
+
+			         geddy.model.User.save( user );
+			         cb( user );
+			      } );
+			   }
+			}
+		);
 }
 
 exports.returnFromFacebook = function (req, resp, params) {

@@ -1,1 +1,50 @@
-Hello there <%="partner" %>
+<% var isLoggedIn = typeof user !== "undefined" && user && user.id && user.name; %>
+<% if(!isLoggedIn){ %>
+  <div class="hero-unit geddy-welcome-box">
+    <h1>&#175;\\_(ツ)_/&#175;</h1>
+    <p>Welcome, you should totally log in, it will be fun.</p>
+    <a class="btn btn-primary btn-large" id="loginbtn" href="/connectToFacebook">Login with Facebook</a>
+  </div>
+<% } %>
+<div class="hero-unit none" id="friendTypeaheadForm">
+ 
+</div>
+<% if(games && isLoggedIn){ %>
+  <div class="hero-unit" id="games">
+    <header class="jumbotron subhead">
+  	 <h1>Games</h1>
+     <p>Choose a game below or start a new game.</p>
+    </header>
+    <div>
+      <%  for(var i=0; i < games.length; i++){ 
+        var g = games[i];
+      %>
+          <a href="#" class="gamestart span2" data-gameid="<%= g.id %>">
+            <img src="http://graph.facebook.com/<%=geddy.model.Game.getOtherUserId(g,user.id)%>/picture"/> 
+            <span><%=geddy.model.Game.getOtherUserName(g,user.id)%></span>
+          </a>
+      <% } %>
+    </div>
+
+    <div class="startnewgame">
+      <h3>Start a new game </h3>
+      <input type="text" class="span3" id="friendTypeahead" data-items="4" placeholder="Enter a name...">
+      <input type="button" class="btn btn-primary" id="friendTypeaheadOK" value="OK"/>
+    </div>
+  </div>
+<%}%>
+<div id="drawarea" class="hero-unit none">
+    <a href="#" id="back" class="btn">back</a>
+    <h2 id="wordtitle"></h2>
+    <canvas width="480" height="360" id="thecanvas"></canvas>
+    <div id="drawtools" class="none">
+        <a id="red" href="#"></a><a id="blue" href="#"></a><input type="button" id="complete" class="btn" href="#" value="complete"/>
+    </div>
+    <form>
+      <div class="control-group">
+        <input type="text" name="answer" id="answerinput"/>
+      </div>
+    <form>
+</div>
+
+<script type="text/javascript" src="/js/game.js"></script>

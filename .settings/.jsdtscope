@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="node_modules/ejs/examples/|node_modules/express/node_modules/mkdirp/|node_modules/connect-auth/node_modules/connect/lib/middleware/|node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/|node_modules/express/testing/foo/|node_modules/connect-auth/node_modules/connect/lib/|node_modules/ejs/support/|node_modules/ejs/lib/|node_modules/connect-auth/node_modules/oauth/examples/express-gdata/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/tool/|node_modules/connect-auth/node_modules/openid/lib/|node_modules/express/node_modules/connect/node_modules/formidable/tool/|node_modules/connect-auth/examples/mac/|node_modules/connect-auth/lib/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/fixture/|node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/system/|node_modules/connect-auth/node_modules/connect/node_modules/mime/|node_modules/connect-auth/node_modules/oauth/tests/|util/|routes/|node_modules/jade/node_modules/mkdirp/examples/|node_modules/express/node_modules/connect/node_modules/formidable/test/integration/|node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/integration/|node_modules/express/node_modules/connect/node_modules/formidable/test/fixture/js/|node_modules/jade/node_modules/mkdirp/|node_modules/connect-auth/node_modules/oauth/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/fixture/js/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/unit/|node_modules/connect-auth/spec/|node_modules/connect-auth/node_modules/connect/node_modules/qs/lib/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/|node_modules/express/testing/|node_modules/connect-auth/node_modules/connect/node_modules/debug/example/|node_modules/express/lib/|node_modules/express/node_modules/connect/node_modules/formidable/test/unit/|node_modules/express/node_modules/connect/|node_modules/express/node_modules/mkdirp/examples/|node_modules/connect-auth/test/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/system/|node_modules/connect-auth/node_modules/connect/node_modules/qs/|node_modules/express/node_modules/qs/lib/|node_modules/connect-auth/node_modules/openid/|node_modules/express/node_modules/connect/node_modules/formidable/lib/|node_modules/express/node_modules/mime/|node_modules/express/node_modules/connect/node_modules/formidable/test/|node_modules/connect-auth/node_modules/oauth/lib/|node_modules/express/lib/router/|node_modules/connect-auth/lib/auth.strategies/|node_modules/jade/lib/|node_modules/express/node_modules/connect/node_modules/formidable/benchmark/|node_modules/express/node_modules/mkdirp/test/|node_modules/express/node_modules/connect/lib/|node_modules/express/|node_modules/connect-auth/node_modules/connect/node_modules/qs/test/|node_modules/connect-auth/node_modules/openid/test/|node_modules/express/node_modules/connect/lib/middleware/session/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/example/|node_modules/express/node_modules/connect/lib/middleware/|node_modules/connect-auth/lib/auth.strategies/http/|node_modules/jade/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/simple/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/lib/|node_modules/express/lib/view/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/|node_modules/connect-auth/lib/auth.strategies/oauth/|node_modules/ejs/|node_modules/ejs/test/|node_modules/connect-auth/node_modules/connect/node_modules/debug/lib/|node_modules/connect-auth/node_modules/connect/lib/middleware/session/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/integration/|node_modules/jade/testing/|node_modules/jade/node_modules/mkdirp/test/|node_modules/jade/lib/nodes/|node_modules/express/testing/foo/routes/|node_modules/connect-auth/examples/|node_modules/connect-auth/node_modules/oauth/examples/|node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/simple/|node_modules/express/node_modules/qs/|node_modules/connect-auth/node_modules/connect/node_modules/debug/|node_modules/connect-auth/examples/mac/files/|node_modules/connect-auth/spec/lib/|node_modules/express/node_modules/connect/node_modules/formidable/example/|node_modules/connect-auth/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/integration/|node_modules/connect-auth/node_modules/connect/|node_modules/express/node_modules/qs/test/|node_modules/jade/node_modules/commander/|node_modules/express/node_modules/connect/node_modules/formidable/test/fixture/|node_modules/connect-auth/node_modules/connect/node_modules/formidable/benchmark/|node_modules/jade/node_modules/commander/lib/|node_modules/express/node_modules/connect/node_modules/formidable/" kind="src" path=""/>
+	<classpathentry excluding="node_modules/connect/lib/middleware/|node_modules/connect/node_modules/formidable/test/|node_modules/connect/lib/|node_modules/oauth/examples/express-gdata/|node_modules/connect/node_modules/formidable/tool/|node_modules/openid/lib/|examples/mac/|lib/|node_modules/connect/node_modules/formidable/test/fixture/|node_modules/connect/node_modules/mime/|node_modules/oauth/tests/|node_modules/oauth/|node_modules/connect/node_modules/formidable/test/fixture/js/|node_modules/connect/node_modules/formidable/test/unit/|spec/|node_modules/connect/node_modules/qs/lib/|node_modules/connect/node_modules/formidable/test/legacy/|node_modules/connect/node_modules/debug/example/|test/|node_modules/connect/node_modules/formidable/test/legacy/system/|node_modules/connect/node_modules/qs/|node_modules/openid/|node_modules/oauth/lib/|lib/auth.strategies/|node_modules/connect/node_modules/qs/test/|node_modules/openid/test/|node_modules/connect/node_modules/formidable/example/|lib/auth.strategies/http/|node_modules/connect/node_modules/formidable/test/legacy/simple/|node_modules/connect/node_modules/formidable/lib/|node_modules/connect/node_modules/formidable/|lib/auth.strategies/oauth/|node_modules/connect/node_modules/debug/lib/|node_modules/connect/lib/middleware/session/|node_modules/connect/node_modules/formidable/test/integration/|examples/|node_modules/oauth/examples/|node_modules/connect/node_modules/debug/|examples/mac/files/|spec/lib/|node_modules/connect/node_modules/formidable/test/legacy/integration/|node_modules/connect/|node_modules/connect/node_modules/formidable/benchmark/" kind="src" path="node_modules/connect-auth"/>
+	<classpathentry excluding="mac/|mac/files/" kind="src" path="node_modules/connect-auth/examples"/>
+	<classpathentry excluding="files/" kind="src" path="node_modules/connect-auth/examples/mac"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/examples/mac/files"/>
+	<classpathentry excluding="auth.strategies/|auth.strategies/http/|auth.strategies/oauth/" kind="src" path="node_modules/connect-auth/lib"/>
+	<classpathentry excluding="http/|oauth/" kind="src" path="node_modules/connect-auth/lib/auth.strategies"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/lib/auth.strategies/http"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/lib/auth.strategies/oauth"/>
+	<classpathentry excluding="lib/middleware/|node_modules/formidable/test/|lib/|node_modules/formidable/tool/|node_modules/formidable/test/fixture/|node_modules/mime/|node_modules/formidable/test/fixture/js/|node_modules/formidable/test/unit/|node_modules/qs/lib/|node_modules/formidable/test/legacy/|node_modules/debug/example/|node_modules/formidable/test/legacy/system/|node_modules/qs/|node_modules/qs/test/|node_modules/formidable/example/|node_modules/formidable/test/legacy/simple/|node_modules/formidable/lib/|node_modules/formidable/|node_modules/debug/lib/|lib/middleware/session/|node_modules/formidable/test/integration/|node_modules/debug/|node_modules/formidable/test/legacy/integration/|node_modules/formidable/benchmark/" kind="src" path="node_modules/connect-auth/node_modules/connect"/>
+	<classpathentry excluding="middleware/|middleware/session/" kind="src" path="node_modules/connect-auth/node_modules/connect/lib"/>
+	<classpathentry excluding="session/" kind="src" path="node_modules/connect-auth/node_modules/connect/lib/middleware"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/lib/middleware/session"/>
+	<classpathentry excluding="example/|lib/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/debug"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/debug/example"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/debug/lib"/>
+	<classpathentry excluding="test/|tool/|test/fixture/|test/fixture/js/|test/unit/|test/legacy/|test/legacy/system/|example/|test/legacy/simple/|lib/|test/integration/|test/legacy/integration/|benchmark/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/benchmark"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/example"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/lib"/>
+	<classpathentry excluding="fixture/|fixture/js/|unit/|legacy/|legacy/system/|legacy/simple/|integration/|legacy/integration/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test"/>
+	<classpathentry excluding="js/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/fixture"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/fixture/js"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/integration"/>
+	<classpathentry excluding="system/|simple/|integration/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/integration"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/simple"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/legacy/system"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/test/unit"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/formidable/tool"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/mime"/>
+	<classpathentry excluding="lib/|test/" kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/qs"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/qs/lib"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/connect/node_modules/qs/test"/>
+	<classpathentry excluding="examples/express-gdata/|tests/|lib/|examples/" kind="src" path="node_modules/connect-auth/node_modules/oauth"/>
+	<classpathentry excluding="express-gdata/" kind="src" path="node_modules/connect-auth/node_modules/oauth/examples"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/oauth/examples/express-gdata"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/oauth/lib"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/oauth/tests"/>
+	<classpathentry excluding="lib/|test/" kind="src" path="node_modules/connect-auth/node_modules/openid"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/openid/lib"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/node_modules/openid/test"/>
+	<classpathentry excluding="lib/" kind="src" path="node_modules/connect-auth/spec"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/spec/lib"/>
+	<classpathentry kind="src" path="node_modules/connect-auth/test"/>
+	<classpathentry excluding="examples/|support/|lib/|test/" kind="src" path="node_modules/ejs"/>
+	<classpathentry kind="src" path="node_modules/ejs/examples"/>
+	<classpathentry kind="src" path="node_modules/ejs/lib"/>
+	<classpathentry kind="src" path="node_modules/ejs/support"/>
+	<classpathentry kind="src" path="node_modules/ejs/test"/>
+	<classpathentry excluding="node_modules/mkdirp/|node_modules/connect/node_modules/formidable/test/legacy/|testing/foo/|node_modules/connect/node_modules/formidable/tool/|node_modules/connect/node_modules/formidable/test/legacy/system/|node_modules/connect/node_modules/formidable/test/integration/|node_modules/connect/node_modules/formidable/test/legacy/integration/|node_modules/connect/node_modules/formidable/test/fixture/js/|testing/|lib/|node_modules/connect/node_modules/formidable/test/unit/|node_modules/connect/|node_modules/mkdirp/examples/|node_modules/qs/lib/|node_modules/connect/node_modules/formidable/lib/|node_modules/mime/|node_modules/connect/node_modules/formidable/test/|lib/router/|node_modules/connect/node_modules/formidable/benchmark/|node_modules/mkdirp/test/|node_modules/connect/lib/|node_modules/connect/lib/middleware/session/|node_modules/connect/lib/middleware/|lib/view/|testing/foo/routes/|node_modules/connect/node_modules/formidable/test/legacy/simple/|node_modules/qs/|node_modules/connect/node_modules/formidable/example/|node_modules/qs/test/|node_modules/connect/node_modules/formidable/test/fixture/|node_modules/connect/node_modules/formidable/" kind="src" path="node_modules/express"/>
+	<classpathentry excluding="router/|view/" kind="src" path="node_modules/express/lib"/>
+	<classpathentry kind="src" path="node_modules/express/lib/router"/>
+	<classpathentry kind="src" path="node_modules/express/lib/view"/>
+	<classpathentry excluding="node_modules/formidable/test/legacy/|node_modules/formidable/tool/|node_modules/formidable/test/legacy/system/|node_modules/formidable/test/integration/|node_modules/formidable/test/legacy/integration/|node_modules/formidable/test/fixture/js/|node_modules/formidable/test/unit/|node_modules/formidable/lib/|node_modules/formidable/test/|node_modules/formidable/benchmark/|lib/|lib/middleware/session/|lib/middleware/|node_modules/formidable/test/legacy/simple/|node_modules/formidable/example/|node_modules/formidable/test/fixture/|node_modules/formidable/" kind="src" path="node_modules/express/node_modules/connect"/>
+	<classpathentry excluding="middleware/session/|middleware/" kind="src" path="node_modules/express/node_modules/connect/lib"/>
+	<classpathentry excluding="session/" kind="src" path="node_modules/express/node_modules/connect/lib/middleware"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/lib/middleware/session"/>
+	<classpathentry excluding="test/legacy/|tool/|test/legacy/system/|test/integration/|test/legacy/integration/|test/fixture/js/|test/unit/|lib/|test/|benchmark/|test/legacy/simple/|example/|test/fixture/" kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/benchmark"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/example"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/lib"/>
+	<classpathentry excluding="legacy/|legacy/system/|integration/|legacy/integration/|fixture/js/|unit/|legacy/simple/|fixture/" kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test"/>
+	<classpathentry excluding="js/" kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/fixture"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/fixture/js"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/integration"/>
+	<classpathentry excluding="system/|integration/|simple/" kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/legacy"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/integration"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/simple"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/legacy/system"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/test/unit"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/connect/node_modules/formidable/tool"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/mime"/>
+	<classpathentry excluding="examples/|test/" kind="src" path="node_modules/express/node_modules/mkdirp"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/mkdirp/examples"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/mkdirp/test"/>
+	<classpathentry excluding="lib/|test/" kind="src" path="node_modules/express/node_modules/qs"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/qs/lib"/>
+	<classpathentry kind="src" path="node_modules/express/node_modules/qs/test"/>
+	<classpathentry excluding="foo/|foo/routes/" kind="src" path="node_modules/express/testing"/>
+	<classpathentry excluding="routes/" kind="src" path="node_modules/express/testing/foo"/>
+	<classpathentry kind="src" path="node_modules/express/testing/foo/routes"/>
+	<classpathentry excluding="node_modules/mkdirp/examples/|node_modules/mkdirp/|lib/|testing/|node_modules/mkdirp/test/|lib/nodes/|node_modules/commander/|node_modules/commander/lib/" kind="src" path="node_modules/jade"/>
+	<classpathentry excluding="nodes/" kind="src" path="node_modules/jade/lib"/>
+	<classpathentry kind="src" path="node_modules/jade/lib/nodes"/>
+	<classpathentry excluding="lib/" kind="src" path="node_modules/jade/node_modules/commander"/>
+	<classpathentry kind="src" path="node_modules/jade/node_modules/commander/lib"/>
+	<classpathentry excluding="examples/|test/" kind="src" path="node_modules/jade/node_modules/mkdirp"/>
+	<classpathentry kind="src" path="node_modules/jade/node_modules/mkdirp/examples"/>
+	<classpathentry kind="src" path="node_modules/jade/node_modules/mkdirp/test"/>
+	<classpathentry kind="src" path="node_modules/jade/testing"/>
+	<classpathentry kind="src" path="routes"/>
+	<classpathentry kind="src" path="util"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

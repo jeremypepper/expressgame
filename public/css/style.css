@@ -34,17 +34,21 @@ div.none,span.none
   display: none;
 }
 
-canvas{
+canvas
+{
   border:1px black solid;
   cursor:crosshair;
+  background:white;
 }
 #drawtools a
 {
-  width:20px;
-  height:10px;
+  width:25px;
+  height:20px;
   border:1px #EEE solid;
-  display:block;
+  margin:5px;
+  display:inline-block;
 }
+
 #red
 {
   background-color:red;
@@ -77,38 +81,53 @@ transition-property: opacity;
   opacity: 0;
 }
 
-#games h2
+a.gamestart
 {
-  display: inline-block;
-  margin: 10px 15px 10px 2px;
-}
-
-.gamestart
-{
-  padding: 30px 5px 0 0;
-}
-
-.gamestart a{
+  font-size: 24px;
+  line-height: 24px;
   text-decoration:none;
+  margin-bottom:4px;
+  padding: 5px;
+  color: #333;
+  border: 1px solid transparent;
+  overflow: hidden;
+  display: block;
+  height:50px;
+  border-radius: 5px;
 }
+a.gamestart img
+{
+  width:50px;
+  height:50px;
+  float: left;
+}
+
 a.gamestart:hover
 {
   text-decoration:none;
+  background-image: linear-gradient(left , #E3E3E3 0%, #f5f5f5 77%);
+  background-image: -webkit-linear-gradient(left , #E3E3E3 0%, #f5f5f5 77%);
+  background-image: -o-linear-gradient(left , #E3E3E3 0%, #f5f5f5 77%);
+  background-image: -moz-linear-gradient(left , #E3E3E3 0%, #f5f5f5 77%);
+  background-image: -ms-linear-gradient(left , #E3E3E3 0%, #f5f5f5 77%);
+  border: 1px solid #999;
+  box-shadow: 3px 3px 15px #333;
 }
+
 .gamestart span
 {
-    position: relative;  
-   top:0;
-   transition:top .3s;
-  -moz-transition:top .3s; /* Firefox 4 */
-  -webkit-transition:top .3s; /* Safari and Chrome */
-  -o-transition:top .3s; /* Opera */
+    display: block;
+    margin: 5px 0 0 55px;
+   transition:color .5s;
+  -moz-transition:color .5s; /* Firefox 4 */
+  -webkit-transition:color .5s; /* Safari and Chrome */
+  -o-transition:color .5s; /* Opera */
 }
 
 a.gamestart:hover span{
   
-  color: black;
-  top:-35px;
+  color: #000;
+  top:-32px;
 }
 
 .startnewgame
