@@ -6,7 +6,6 @@
 var express = require('express')
   , routes = require('./routes')
   , gamecontroller = require('./routes/game')
-  , auth = require('connect-auth')
 
 var app = module.exports = express.createServer();
 require("express-resource")
@@ -51,6 +50,7 @@ app.get('/return', routes.returnFromFacebook);
 app.resource('games', require('./routes/game'), 
   {
     index:gamecontroller.gameAll,
+    load: gamecontroller.load, 
     show: gamecontroller.show,
     create:gamecontroller.create,
     update:gamecontroller.update
@@ -64,8 +64,6 @@ app.resource('games', require('./routes/game'),
 // app.post('/games.:format?', gamecontroller.create);
 // app.get('/games/:id.:format?', gamecontroller.show);
 // app.put('/games/:id.:format?', gamecontroller.update);
-
-
 //geddy crap to remove in the future
 geddy = {};
 geddy.log = {};

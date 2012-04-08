@@ -6,9 +6,6 @@ var facebook = require(process.cwd() + '/util/facebook').Facebook;
 var string = require(process.cwd() + '/util/string').String;
 var controllerUtil = require(process.cwd() + '/util/controllerUtil').ControllerUtil;
 geddy = global.geddy;
-
-
-console.log("hey you are loading index router.")
 /*
  * GET home page.
  */
@@ -89,13 +86,12 @@ function loginOrRegisterUser(token, expires, cb) {
 			         {
 			            // dont have this user yet, need to create a new one
 			            // todo: replace expires with now + expires
-			            user = geddy.model.User.create( {
+			            user =  {
 			               id: me.id,
 			               name: me.name,
 			               token: token,
 			               expires: new Date()
-			            } );
-			            geddy.model.User.create( me.id, function( user ) { } );
+			            };
 			         }
 			         else
 			         {
