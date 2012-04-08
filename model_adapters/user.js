@@ -5,15 +5,15 @@ var User = new ( function()
    this.save = function( user )
    {
       user.saved = true;
-      geddy.db.SaveUser( user );
+      Database.SaveUser( user );
    };
    this.load = function( id, token, callback )
    {
-      geddy.db.LoadUser( id, token, callback );
+      Database.LoadUser( id, token, callback );
    };
    this.loadAll = function( callback )
    {
-      geddy.db.LoadAllUsers( callback );
+      Database.LoadAllUsers( callback );
    };
 } )();
 exports.User = User;

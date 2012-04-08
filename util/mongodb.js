@@ -20,7 +20,7 @@ var MongoDb = new ( function()
    // TODO ryknuth: delete this function when DB is settled
    this.DropDatabase = function()
    {
-      geddy.log.debug( "Dropping database." );
+      LogDebug( "Dropping database." );
       EnsureConnection( 
          function()
          {
@@ -28,7 +28,7 @@ var MongoDb = new ( function()
                function( err, result )
                {
                   if( err )
-                     geddy.log.debug( "Failed to drop database" );
+                     LogDebug( "Failed to drop database" );
 
                   // Close the DB and reopen. This will create a brand new one.
                   CloseConnection();
@@ -51,7 +51,7 @@ var MongoDb = new ( function()
 
    this.LoadGamesByUserId = function( userid, callback )
    {
-      geddy.log.debug( "Loading games from user: " + userid );
+      LogDebug( "Loading games from user: " + userid );
       Load( gamesCollectionName,
          function( collection )
          {
@@ -62,11 +62,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        geddy.log.error( "Unabled to load games from user: " + userid );
+                        LogError( "Unabled to load games from user: " + userid );
                         games = [];
                      }
                      else
-                        geddy.log.debug( "Loaded games for user: " + userid );
+                        LogDebug( "Loaded games for user: " + userid );
 
                      callback.call( this, games );
                   }
@@ -80,7 +80,7 @@ var MongoDb = new ( function()
 
    this.LoadGameByGameId = function( gameid, callback )
    {
-      geddy.log.debug( "Loading game from gameid: " + gameid );
+      LogDebug( "Loading game from gameid: " + gameid );
       Load( gamesCollectionName,
          function( collection )
          {
@@ -91,11 +91,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        geddy.log.error( "Unabled to load game from gameid: " + gameid );
+                        LogError( "Unabled to load game from gameid: " + gameid );
                         game = null;
                      }
                      else
-                        geddy.log.debug( "Loaded game for gameid: " + gameid );
+                        LogDebug( "Loaded game for gameid: " + gameid );
 
                      callback.call( this, game );
                   }
@@ -109,7 +109,7 @@ var MongoDb = new ( function()
 
    this.LoadUser = function( id, token, callback )
    {
-      geddy.log.debug( "Loading user from fbtoken: " + token );
+      LogDebug( "Loading user from fbtoken: " + token );
       Load( usersCollectionName,
          function( collection )
          {
@@ -123,11 +123,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        geddy.log.error( "Unabled to load user from token: " + token );
+                        LogError( "Unabled to load user from token: " + token );
                         user = null;
                      }
                      else
-                        geddy.log.debug( "Loaded user for token: " + token );
+                        LogDebug( "Loaded user for token: " + token );
 
                      callback.call( this, user );
                   }
@@ -141,7 +141,7 @@ var MongoDb = new ( function()
 
    this.LoadAllUsers = function( callback )
    {
-      geddy.log.debug( "Loading all users." );
+      LogDebug( "Loading all users." );
       Load( usersCollectionName,
          function( collection )
          {
@@ -152,7 +152,7 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        geddy.log.error( "Failed to get all users." );
+                        LogError( "Failed to get all users." );
                         users = [];
                      }
 
@@ -171,12 +171,12 @@ var MongoDb = new ( function()
    {
       if( this.Db )
       {
-         geddy.log.debug( "Found persist db connection." );
+         LogDebug( "Found persist db connection." );
          callback.call( this );
          return;
       }
 
-      geddy.log.debug( "Ensuring db connection." );
+      LogDebug( "Ensuring db connection." );
 
       var internalDb = require( 'mongodb' ).Db;
       var Server = require( 'mongodb' ).Server;
@@ -193,11 +193,11 @@ var MongoDb = new ( function()
          function( err, db )
          {
             if( err )
-               geddy.log.error( "Error opening MongoDB " + err );
+               LogError( "Error opening MongoDB " + err );
             else
             {
                this.Db = db;
-               geddy.log.debug( "Opened MongoDB connection." );
+               LogDebug( "Opened MongoDB connection." );
             }
 
             callback.call( this );
@@ -214,11 +214,11 @@ var MongoDb = new ( function()
             {
                if( err )
                {
-                  geddy.log.error( "Unabled to find: " + collectionName );
+                  LogError( "Unabled to find: " + collectionName );
                   collection = null;
                }
                else
-                  geddy.log.debug( "Got collection: " + collectionName );
+                  LogDebug( "Got collection: " + collectionName );
 
                callback.call( this, collection );
             }
@@ -231,7 +231,7 @@ var MongoDb = new ( function()
    function Save( data, collectionName )
    {
       // TODO ryknuth: if this fails.. should we let the controller know?
-      geddy.log.debug( "Saving data: " + JSON.stringify( data ) + " to collection: " + collectionName );
+      LogDebug( "Saving data: " + JSON.stringify( data ) + " to collection: " + collectionName );
       EnsureConnection( 
          function()
          {
@@ -245,9 +245,9 @@ var MongoDb = new ( function()
                         function( err, result )
                         {
                            if( err )
-                              geddy.log.error( "Unabled to write to: " + collectionName );
+                              LogError( "Unabled to write to: " + collectionName );
                            else
-                              geddy.log.debug( "Wrote: " + JSON.stringify( data ) );
+                              LogDebug( "Wrote: " + JSON.stringify( data ) );
                         }
                     );
                   }
@@ -266,7 +266,7 @@ var MongoDb = new ( function()
                function( collection )
                {
                   if( collection === null )
-                     geddy.log.error( "Unable to find collection: " + collectionName );
+                     LogError( "Unable to find collection: " + collectionName );
                   queryCallback.call( this, collection );
                }
             );
@@ -292,9 +292,9 @@ var MongoDb = new ( function()
                   function( error, indexName )
                   {
                      if( error )
-                        geddy.log.error( "Unable to ensureIndex on: " + collectionName + " error: " + error );
+                        LogError( "Unable to ensureIndex on: " + collectionName + " error: " + error );
                      else
-                        geddy.log.debug( "Ensured index on: " + collectionName );
+                        LogDebug( "Ensured index on: " + collectionName );
                   }
                );
             }

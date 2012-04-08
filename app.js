@@ -56,6 +56,13 @@ app.resource('games', require('./routes/game'),
     update:gamecontroller.update
    });
 
+// Todo ryknuth: make these write different colors
+LogError = console.log;
+LogInfo = console.log;
+LogWarning = console.log;
+LogDebug = console.log;
+Database = require(process.cwd() + '/util/mongodb').MongoDb;
+
 // Routes
 // app.get('/', routes.index);
 // app.get('/connectToFacebook', routes.connectToFacebook);
@@ -67,16 +74,11 @@ app.resource('games', require('./routes/game'),
 //geddy crap to remove in the future
 geddy = {};
 geddy.log = {};
-geddy.log.error = console.log;
-geddy.log.info = console.log;
-geddy.log.warn = console.log;
-geddy.log.debug = console.log;
 global.geddy = geddy;
 geddy.model = {}
 geddy.model = {};
 geddy.model.Game = require(process.cwd() + '/model_adapters/game').Game;
 geddy.model.User = require(process.cwd() + '/model_adapters/user').User;
-geddy.db = require(process.cwd() + '/util/mongodb').MongoDb;
 geddy.commonController = require(process.cwd() + '/util/controllerUtil').ControllerUtil;
 var words = require(process.cwd() + '/util/words').Words;
 geddy.wordlist = require(process.cwd() + '/util/wordlist').WordList(words);
