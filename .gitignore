@@ -1,0 +1,14 @@
+*/log/*.log
+geddygame/mongodb/data/*
+geddygame/MongoDB/x64/bin/bsondump.exe
+geddygame/MongoDB/x64/bin/mongodump.exe
+geddygame/MongoDB/x64/bin/mongoexport.exe
+geddygame/MongoDB/x64/bin/mongofiles.exe
+geddygame/MongoDB/x64/bin/mongoimport.exe
+geddygame/MongoDB/x64/bin/mongorestore.exe
+geddygame/MongoDB/x64/bin/mongostat.exe
+geddygame/MongoDB/x64/bin/mongotop.exe
+log/*.log
+mongodb/data/*
+*.orig
+node_modules
