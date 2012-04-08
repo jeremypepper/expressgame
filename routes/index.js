@@ -16,7 +16,7 @@ exports.index = function(req, res){
   console.log(req.cookies)
   var gotUserCallback = function (user) {
   	  var geddy = global.geddy;
-      LogDebug( "In got user callback. user is " + user );
+      console.info( "In got user callback. user is " + user );
          result.user = user;
          if( user ){
             Database.LoadGamesByUserId( user.id,
@@ -24,7 +24,7 @@ exports.index = function(req, res){
                {
                   if( games === null )
                   {
-                     LogError( "Failed to get games from: " + user.id );
+                     console.error( "Failed to get games from: " + user.id );
                      games = [];
                   }
 
@@ -123,13 +123,13 @@ exports.returnFromFacebook = function (req, resp, params) {
             resp.cookie("fbid", data.id, { path: "/" });
             resp.redirect('/');
          } else {
-            LogError("error in returnFromFacebook, data:" + data);
+            console.error("error in returnFromFacebook, data:" + data);
             resp.render('return',data);
          }
       }
       var errorhandler = function () {
          var errormsg = "oh snap, got an error in returnFromFacebook";
-         LogError(errormsg);
+         console.error(errormsg);
          done({ error: "oh snap, got an error in returnFromFacebook" });
       }
 
@@ -159,8 +159,8 @@ exports.returnFromFacebook = function (req, resp, params) {
       }
       else {
          var errormsg = "error: state is invalid or can't get code from callback";
-         LogError(errormsg);
-         LogError(query);
+         console.error(errormsg);
+         console.error(query);
          done({ error: errormsg });
       }
    };

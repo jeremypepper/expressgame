@@ -20,7 +20,7 @@ var MongoDb = new ( function()
    // TODO ryknuth: delete this function when DB is settled
    this.DropDatabase = function()
    {
-      LogDebug( "Dropping database." );
+      console.info( "Dropping database." );
       EnsureConnection( 
          function()
          {
@@ -28,7 +28,7 @@ var MongoDb = new ( function()
                function( err, result )
                {
                   if( err )
-                     LogDebug( "Failed to drop database" );
+                     console.info( "Failed to drop database" );
 
                   // Close the DB and reopen. This will create a brand new one.
                   CloseConnection();
@@ -51,7 +51,7 @@ var MongoDb = new ( function()
 
    this.LoadGamesByUserId = function( userid, callback )
    {
-      LogDebug( "Loading games from user: " + userid );
+      console.info( "Loading games from user: " + userid );
       Load( gamesCollectionName,
          function( collection )
          {
@@ -62,11 +62,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        LogError( "Unabled to load games from user: " + userid );
+                        console.error( "Unabled to load games from user: " + userid );
                         games = [];
                      }
                      else
-                        LogDebug( "Loaded games for user: " + userid );
+                        console.info( "Loaded games for user: " + userid );
 
                      callback.call( this, games );
                   }
@@ -80,7 +80,7 @@ var MongoDb = new ( function()
 
    this.LoadGameByGameId = function( gameid, callback )
    {
-      LogDebug( "Loading game from gameid: " + gameid );
+      console.info( "Loading game from gameid: " + gameid );
       Load( gamesCollectionName,
          function( collection )
          {
@@ -91,11 +91,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        LogError( "Unabled to load game from gameid: " + gameid );
+                        console.error( "Unabled to load game from gameid: " + gameid );
                         game = null;
                      }
                      else
-                        LogDebug( "Loaded game for gameid: " + gameid );
+                        console.info( "Loaded game for gameid: " + gameid );
 
                      callback.call( this, game );
                   }
@@ -109,7 +109,7 @@ var MongoDb = new ( function()
 
    this.LoadUser = function( id, token, callback )
    {
-      LogDebug( "Loading user from fbtoken: " + token );
+      console.info( "Loading user from fbtoken: " + token );
       Load( usersCollectionName,
          function( collection )
          {
@@ -123,11 +123,11 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        LogError( "Unabled to load user from token: " + token );
+                        console.error( "Unabled to load user from token: " + token );
                         user = null;
                      }
                      else
-                        LogDebug( "Loaded user for token: " + token );
+                        console.info( "Loaded user for token: " + token );
 
                      callback.call( this, user );
                   }
@@ -141,7 +141,7 @@ var MongoDb = new ( function()
 
    this.LoadAllUsers = function( callback )
    {
-      LogDebug( "Loading all users." );
+      console.info( "Loading all users." );
       Load( usersCollectionName,
          function( collection )
          {
@@ -152,7 +152,7 @@ var MongoDb = new ( function()
                   {
                      if( err )
                      {
-                        LogError( "Failed to get all users." );
+                        console.error( "Failed to get all users." );
                         users = [];
                      }
 
@@ -171,12 +171,12 @@ var MongoDb = new ( function()
    {
       if( this.Db )
       {
-         LogDebug( "Found persist db connection." );
+         console.info( "Found persist db connection." );
          callback.call( this );
          return;
       }
 
-      LogDebug( "Ensuring db connection." );
+      console.info( "Ensuring db connection." );
 
       var internalDb = require( 'mongodb' ).Db;
       var Server = require( 'mongodb' ).Server;
@@ -193,11 +193,11 @@ var MongoDb = new ( function()
          function( err, db )
          {
             if( err )
-               LogError( "Error opening MongoDB " + err );
+               console.error( "Error opening MongoDB " + err );
             else
             {
                this.Db = db;
-               LogDebug( "Opened MongoDB connection." );
+               console.info( "Opened MongoDB connection." );
             }
 
             callback.call( this );
@@ -214,11 +214,11 @@ var MongoDb = new ( function()
             {
                if( err )
                {
-                  LogError( "Unabled to find: " + collectionName );
+                  console.error( "Unabled to find: " + collectionName );
                   collection = null;
                }
                else
-                  LogDebug( "Got collection: " + collectionName );
+                  console.info( "Got collection: " + collectionName );
 
                callback.call( this, collection );
             }
@@ -231,7 +231,7 @@ var MongoDb = new ( function()
    function Save( data, collectionName )
    {
       // TODO ryknuth: if this fails.. should we let the controller know?
-      LogDebug( "Saving data: " + JSON.stringify( data ) + " to collection: " + collectionName );
+      console.info( "Saving data: " + JSON.stringify( data ) + " to collection: " + collectionName );
       EnsureConnection( 
          function()
          {
@@ -245,9 +245,9 @@ var MongoDb = new ( function()
                         function( err, result )
                         {
                            if( err )
-                              LogError( "Unabled to write to: " + collectionName );
+                              console.error( "Unabled to write to: " + collectionName );
                            else
-                              LogDebug( "Wrote: " + JSON.stringify( data ) );
+                              console.info( "Wrote: " + JSON.stringify( data ) );
                         }
                     );
                   }
@@ -266,7 +266,7 @@ var MongoDb = new ( function()
                function( collection )
                {
                   if( collection === null )
-                     LogError( "Unable to find collection: " + collectionName );
+                     console.error( "Unable to find collection: " + collectionName );
                   queryCallback.call( this, collection );
                }
             );
@@ -292,9 +292,9 @@ var MongoDb = new ( function()
                   function( error, indexName )
                   {
                      if( error )
-                        LogError( "Unable to ensureIndex on: " + collectionName + " error: " + error );
+                        console.error( "Unable to ensureIndex on: " + collectionName + " error: " + error );
                      else
-                        LogDebug( "Ensured index on: " + collectionName );
+                        console.info( "Ensured index on: " + collectionName );
                   }
                );
             }

@@ -34,7 +34,7 @@ var Game = new ( function()
       Database.LoadGamesByUserId( userid, callback );
    }
 
-   LogDebug( "creating the game model adapter" );
+   console.info( "creating the game model adapter" );
 } )();
 
 Game.getOtherUserId = function(game, myUserId){

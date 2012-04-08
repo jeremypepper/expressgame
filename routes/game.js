@@ -32,7 +32,7 @@ exports.gameAll = function( req, resp )
  exports.add = function( req, resp )
  {
     var self = this;
-    LogInfo( "in add" );
+    console.info( "in add" );
     function gotUserCallback( user )
     {
        resp.json( { user: user, params: req.body } );
@@ -45,7 +45,7 @@ exports.gameAll = function( req, resp )
  {
     // todo error handling on user input
     var self = this;
-    LogInfo( "in creategame " );
+    console.info( "in creategame " );
     function gotUserCallback( user )
     {
        if( !user )
@@ -71,7 +71,7 @@ exports.gameAll = function( req, resp )
       // todo validate
 //         if( game.isValid() )
 //         {
-          LogInfo( "saved game " + game.id )
+          console.info( "saved game " + game.id )
           geddy.model.Game.save( game );
 //         } else
 //         {
@@ -88,10 +88,10 @@ exports.gameAll = function( req, resp )
  exports.show = function( req, resp)
  {
     var self = this;
-    LogInfo( "getting game " + req.params.game );
+    console.info( "getting game " + req.params.game );
     Database.LoadGameByGameId( req.params.game, function( game )
     {
-       LogInfo( "got game " + game )
+       console.info( "got game " + game )
        resp.json( { game: game } );
     });
  };
@@ -99,8 +99,8 @@ exports.gameAll = function( req, resp )
  exports.update = function( req, resp)
  {
     // Save the resource, then display the item page
-    LogInfo( "ID:" + req.params.game );
-    LogInfo( "drawData:" + req.body.drawData );
+    console.info( "ID:" + req.params.game );
+    console.info( "drawData:" + req.body.drawData );
     var self = this;
     geddy.model.Game.update( req.params.game, req.body.drawData, function( game )
     {

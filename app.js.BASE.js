@@ -44,6 +44,27 @@ app.configure('production', function(){
   app.set("fbhost","notp.herokuapp.com");;
 });
 
+app.get('/', routes.index);
+app.get('/connectToFacebook', routes.connectToFacebook);
+app.get('/return', routes.returnFromFacebook);
+app.resource('games', require('./routes/game'), 
+  {
+    index:gamecontroller.gameAll,
+    load: gamecontroller.load, 
+    show: gamecontroller.show,
+    create:gamecontroller.create,
+    update:gamecontroller.update
+   });
+
+// Routes
+// app.get('/', routes.index);
+// app.get('/connectToFacebook', routes.connectToFacebook);
+// app.get('/return', routes.returnFromFacebook);
+// app.get('/games.:format', gamecontroller.gameAll);
+// app.post('/games.:format?', gamecontroller.create);
+// app.get('/games/:id.:format?', gamecontroller.show);
+// app.put('/games/:id.:format?', gamecontroller.update);
+//geddy crap to remove in the future
 geddy = {};
 geddy.log = {};
 geddy.log.error = console.log;
@@ -60,33 +81,5 @@ geddy.commonController = require(process.cwd() + '/util/controllerUtil').Control
 var words = require(process.cwd() + '/util/words').Words;
 geddy.wordlist = require(process.cwd() + '/util/wordlist').WordList(words);
 geddy.string =  require(process.cwd() + '/util/string').String;
-
-app.get('/', routes.index);
-app.get('/connectToFacebook', routes.connectToFacebook);
-app.get('/return', routes.returnFromFacebook);
-app.get('/wipe', routes.wipe);
-app.post('/wipe', routes.wipe);
-app.resource('games', require('./routes/game'), 
-  {
-    index:gamecontroller.gameAll,
-    load: gamecontroller.load, 
-    show: gamecontroller.show,
-    create:gamecontroller.create,
-    update:gamecontroller.update
-   });
-
-// Todo ryknuth: make these write different colors
-Database = require(process.cwd() + '/util/mongodb').MongoDb;
-
-// Routes
-// app.get('/', routes.index);
-// app.get('/connectToFacebook', routes.connectToFacebook);
-// app.get('/return', routes.returnFromFacebook);
-// app.get('/games.:format', gamecontroller.gameAll);
-// app.post('/games.:format?', gamecontroller.create);
-// app.get('/games/:id.:format?', gamecontroller.show);
-// app.put('/games/:id.:format?', gamecontroller.update);
-//geddy crap to remove in the future
-
 app.listen(80);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

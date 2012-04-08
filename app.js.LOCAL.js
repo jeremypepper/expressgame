@@ -75,9 +75,6 @@ app.resource('games', require('./routes/game'),
     update:gamecontroller.update
    });
 
-// Todo ryknuth: make these write different colors
-Database = require(process.cwd() + '/util/mongodb').MongoDb;
-
 // Routes
 // app.get('/', routes.index);
 // app.get('/connectToFacebook', routes.connectToFacebook);
