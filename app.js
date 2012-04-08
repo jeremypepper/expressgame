@@ -44,9 +44,28 @@ app.configure('production', function(){
   app.set("fbhost","notp.herokuapp.com");;
 });
 
+geddy = {};
+geddy.log = {};
+geddy.log.error = console.log;
+geddy.log.info = console.log;
+geddy.log.warn = console.log;
+geddy.log.debug = console.log;
+global.geddy = geddy;
+geddy.model = {}
+geddy.model = {};
+geddy.model.Game = require(process.cwd() + '/model_adapters/game').Game;
+geddy.model.User = require(process.cwd() + '/model_adapters/user').User;
+geddy.db = require(process.cwd() + '/util/mongodb').MongoDb;
+geddy.commonController = require(process.cwd() + '/util/controllerUtil').ControllerUtil;
+var words = require(process.cwd() + '/util/words').Words;
+geddy.wordlist = require(process.cwd() + '/util/wordlist').WordList(words);
+geddy.string =  require(process.cwd() + '/util/string').String;
+
 app.get('/', routes.index);
 app.get('/connectToFacebook', routes.connectToFacebook);
 app.get('/return', routes.returnFromFacebook);
+app.get('/wipe', routes.wipe);
+app.post('/wipe', routes.wipe);
 app.resource('games', require('./routes/game'), 
   {
     index:gamecontroller.gameAll,
@@ -65,21 +84,6 @@ app.resource('games', require('./routes/game'),
 // app.get('/games/:id.:format?', gamecontroller.show);
 // app.put('/games/:id.:format?', gamecontroller.update);
 //geddy crap to remove in the future
-geddy = {};
-geddy.log = {};
-geddy.log.error = console.log;
-geddy.log.info = console.log;
-geddy.log.warn = console.log;
-geddy.log.debug = console.log;
-global.geddy = geddy;
-geddy.model = {}
-geddy.model = {};
-geddy.model.Game = require(process.cwd() + '/model_adapters/game').Game;
-geddy.model.User = require(process.cwd() + '/model_adapters/user').User;
-geddy.db = require(process.cwd() + '/util/mongodb').MongoDb;
-geddy.commonController = require(process.cwd() + '/util/controllerUtil').ControllerUtil;
-var words = require(process.cwd() + '/util/words').Words;
-geddy.wordlist = require(process.cwd() + '/util/wordlist').WordList(words);
-geddy.string =  require(process.cwd() + '/util/string').String;
+
 app.listen(80);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

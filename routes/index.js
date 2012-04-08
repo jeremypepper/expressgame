@@ -164,3 +164,16 @@ exports.returnFromFacebook = function (req, resp, params) {
          done({ error: errormsg });
       }
    };
+
+exports.wipe = function( req, resp )
+   {
+      // HOLY CRAP WIPES THE DB
+      if( req.method === 'POST' )
+      {
+         geddy.db.DropDatabase();
+         geddy.log.info( "wiping db" )
+      }
+
+      geddy.log.info( "wipe" )
+      resp.render( "wipe", {});
+   };
