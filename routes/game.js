@@ -88,8 +88,8 @@ exports.gameAll = function( req, resp )
  exports.show = function( req, resp)
  {
     var self = this;
-    geddy.log.info( "getting game " + req.params.id );
-    geddy.db.LoadGameByGameId( req.params.id, function( game )
+    geddy.log.info( "getting game " + req.params.game );
+    geddy.db.LoadGameByGameId( req.params.game, function( game )
     {
        geddy.log.info( "got game " + game )
        resp.json( { game: game } );
@@ -99,10 +99,10 @@ exports.gameAll = function( req, resp )
  exports.update = function( req, resp)
  {
     // Save the resource, then display the item page
-    geddy.log.info( "ID:" + req.params.id );
+    geddy.log.info( "ID:" + req.params.game );
     geddy.log.info( "drawData:" + req.body.drawData );
     var self = this;
-    geddy.model.Game.update( req.params.id, req.body.drawData, function( game )
+    geddy.model.Game.update( req.params.game, req.body.drawData, function( game )
     {
        //resp.redirect("/games/" + req.params.id);
        resp.json(game);
