@@ -9,7 +9,7 @@ var express = require('express')
   , auth = require('connect-auth')
 
 var app = module.exports = express.createServer();
-
+require("express-resource")
 // Configuration
 
 const fbId = "405186406159531";
@@ -45,14 +45,25 @@ app.configure('production', function(){
   app.set("fbhost","notp.herokuapp.com");;
 });
 
-// Routes
 app.get('/', routes.index);
 app.get('/connectToFacebook', routes.connectToFacebook);
 app.get('/return', routes.returnFromFacebook);
-app.get('/games.:format', gamecontroller.gameAll);
-app.post('/games.:format?', gamecontroller.create);
-app.get('/games/:id.:format?', gamecontroller.show);
-app.put('/games/:id.:format?', gamecontroller.update);
+app.resource('games', require('./routes/game'), 
+  {
+    index:gamecontroller.gameAll,
+    show: gamecontroller.show,
+    create:gamecontroller.create,
+    update:gamecontroller.update
+   });
+
+// Routes
+// app.get('/', routes.index);
+// app.get('/connectToFacebook', routes.connectToFacebook);
+// app.get('/return', routes.returnFromFacebook);
+// app.get('/games.:format', gamecontroller.gameAll);
+// app.post('/games.:format?', gamecontroller.create);
+// app.get('/games/:id.:format?', gamecontroller.show);
+// app.put('/games/:id.:format?', gamecontroller.update);
 
 
 //geddy crap to remove in the future
