@@ -86,5 +86,6 @@ Database = require(process.cwd() + '/util/mongodb').MongoDb;
 // app.put('/games/:id.:format?', gamecontroller.update);
 //geddy crap to remove in the future
 
-app.listen(80);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+var port = process.env.PORT || 80;
+app.listen(port);
+//console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
