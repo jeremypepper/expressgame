@@ -11,11 +11,11 @@ var Facebook = new (function () {
         var url = string.format(fbgraphFormat, path, token)
         ajax.get(
             url
-            , function (res, data) {
+            , function (data, res) {
                 cb(JSON.parse(data));
             }
             , function () {
-                geddy.log.trace("error in authgraphcall");
+                console.trace("error in authgraphcall");
                 cb({error:"Error calling fb"})
             }
         );
@@ -46,7 +46,7 @@ var Facebook = new (function () {
             + "&client_secret=" + global.config.FB.secret
             + "&code=" + code;
 
-        function done(res, data) {
+        function done(data, res) {
             data = data ? data : null;
             callback(data);
         }

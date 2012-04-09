@@ -12,14 +12,14 @@ var Ajax = {};
         var resp;
         var done = function () {
             if (success) {
-                if (successcb) successcb(resp, data.join());
+                if (successcb) successcb(data.join(), resp);
             }
             else {
                 log.error("error in ajax.js: url:" + url)
-                if (failcb)failcb(data);
+                if (failcb)failcb(data, resp);
             }
 
-            if (finallycb)finallycb();
+            if (finallycb)finallycb(data.join(), resp);
         };
 
         parsedUrl = Url.parse(url);
